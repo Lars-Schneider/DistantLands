@@ -9,11 +9,14 @@ public:
 
 	bool Init();
 
-	void Update(f32 dt);
+	void Update(f64 dt);
+
+	void Render();
 
 	bool Running() { return running; }
 private:
 	bool running = false;
 	Window* window;
-	f32 fps;
+	f64 x = 0;
+	f64 start;
 };
