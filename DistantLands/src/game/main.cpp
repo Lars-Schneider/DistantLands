@@ -7,10 +7,13 @@
 
 int main(void)
 {
+    //TODO: move to renderer
     if (!glfwInit())
     {
         return -1;
     }
+
+    //Create and initialize game.
     Game* game = new Game();
 
     if (!game->Init())
@@ -18,14 +21,15 @@ int main(void)
         return -1;
     }
 
-    //Loop
+    //Timing variables
     f64 frame_start = 0;
     f64 dt = 0.16;
+
+    //Game Loop
     while (game->Running())
     {
         frame_start = TIME_NOW_SECONDS();
         game->Update(dt);
-        game->Render();
         dt = TIME_NOW_SECONDS() - frame_start;
     }
 
