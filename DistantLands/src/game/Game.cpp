@@ -24,7 +24,7 @@ void Game::Update(f64 dt)
 	window->SwapBuffers();
 
 	x += 1 * dt;
-	if (x >= 1)
+	if (x >= 1.f)
 	{
 		f64 elapsed = TIME_NOW_SECONDS() - start;
 		std::cout << elapsed << "seconds. Average of " << 1 / dt << "fps. Average of " << elapsed << " seconds per pixel\n";

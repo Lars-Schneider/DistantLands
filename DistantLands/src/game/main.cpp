@@ -19,28 +19,14 @@ int main(void)
     }
 
     //Loop
-    f64 t = 0.0;
-    f64 dt = 1 / 60.0;
-
-    f64 currentTime = TIME_NOW_SECONDS();
-    f64 newTime;
-    f64 frameTime;
-    f32 deltaTime;
+    f64 frame_start = 0;
+    f64 dt = 0.16;
     while (game->Running())
     {
-        newTime = TIME_NOW_SECONDS();
-        frameTime = newTime - currentTime;
-        currentTime = newTime;
-
-        while (frameTime > 0.0)
-        {
-            f32 deltaTime = fmin(frameTime, dt);
-            game->Update(dt);
-            frameTime -= deltaTime;
-            t += deltaTime;
-        }
-
+        frame_start = TIME_NOW_SECONDS();
+        game->Update(dt);
         game->Render();
+        dt = TIME_NOW_SECONDS() - frame_start;
     }
 
     return 0;
