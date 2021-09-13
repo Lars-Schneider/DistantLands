@@ -2,30 +2,27 @@
 #include <GLFW/glfw3.h>
 #include <string>
 #include <iostream>
-#include "../core/Types.h"
-namespace Engine
+#include "../utils/Types.h"
+class Window
 {
-	class Window
-	{
-	public:
-		Window(std::string title);
-		~Window();
+public:
+	Window(std::string title);
+	~Window();
 
-		bool Init();
+	bool Init();
 
-		inline GLFWwindow* GetGLFWwindowInstance() { return window; }
+	inline GLFWwindow* GetGLFWwindowInstance() { return window; }
 
-		std::string& Title() { return title; }
-		i32& Width() { return width; }
-		i32& Height() { return height; }
+	std::string Title() { return title; }
+	i32 Width();
+	i32 Height();
 
-		bool ShouldClose();
-		void SwapBuffers();
-	private:
-		GLFWwindow* window;
+	bool ShouldClose();
+	void SwapBuffers();
+private:
+	GLFWwindow* window;
 
-		std::string title;
-		i32 width;
-		i32 height;
-	};
-}
+	std::string title;
+	i32 width;
+	i32 height;
+};

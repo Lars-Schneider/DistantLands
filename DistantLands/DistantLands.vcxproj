@@ -88,12 +88,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\core\main.cpp" />
-    <ClCompile Include="src\core\glad.c" />
+    <ClCompile Include="src\game\Game.cpp" />
+    <ClCompile Include="src\game\main.cpp" />
+    <ClCompile Include="src\glad\glad.c" />
     <ClCompile Include="src\engine\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\core\Types.h" />
+    <ClInclude Include="src\game\Game.h" />
+    <ClInclude Include="src\utils\Types.h" />
     <ClInclude Include="src\engine\Window.h" />
     <ClInclude Include="src\utils\file io\FileIO.h" />
   </ItemGroup>
